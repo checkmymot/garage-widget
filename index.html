@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free MOT Checker Widget for UK Garages — CheckMyMOT</title>
+<meta name="description" content="Add a free MOT history & due-date checker box to your garage website in 2 minutes. No fees, no maintenance — powered by CheckMyMOT's free DVSA-data tools.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#16222d;background:#f6f8fb;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{background:#0B1933;color:#fff;padding:56px 0 48px}
+header h1{font-size:2rem;line-height:1.25;margin-bottom:12px}
+header h1 span{color:#FDC429}
+header p{color:#b9c4d4;max-width:640px;font-size:1.05rem}
+section{padding:44px 0}
+h2{font-size:1.5rem;margin-bottom:14px;color:#0B1933}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:28px;box-shadow:0 6px 24px rgba(2,32,71,.06)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+pre{background:#0B1933;color:#e8eef6;padding:18px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.55;margin:14px 0}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.copybtn{background:#FDC429;color:#0B1933;border:0;border-radius:8px;padding:10px 20px;font-weight:800;font-size:14px;cursor:pointer}
+.copybtn:hover{filter:brightness(.95)}
+ul.ben{list-style:none}
+ul.ben li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid #eef2f6}
+ul.ben li:before{content:"✓";position:absolute;left:4px;color:#16A34A;font-weight:800}
+.faq{margin-top:8px}
+.faq details{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;color:#0B1933}
+.faq p{margin-top:8px;color:#46545f;font-size:.95rem}
+footer{background:#0B1933;color:#8a97a3;padding:28px 0;font-size:.85rem;text-align:center}
+footer a{color:#FDC429;text-decoration:none}
+.demo-note{font-size:.85rem;color:#5b6b7a;margin-top:10px}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<h1>Free MOT checker widget <span>for UK garages</span></h1>
+<p>Give your website visitors a free MOT history &amp; due-date check in under two minutes. You add two lines of code — we handle everything else, forever free.</p>
+</div>
+</header>
+
+<section>
+<div class="wrap grid">
+<div>
+<h2>Try it live</h2>
+<p style="margin-bottom:14px;color:#46545f">This is exactly what your customers will see on your site:</p>
+<!-- LIVE DEMO -->
+<div class="cmm-mot-widget"></div>
+<script src="./widget.js" async></script>
+<p class="demo-note">Type any registration and hit “Check free” — the full checker opens on checkmymot.com.</p>
+</div>
+<div>
+<h2>Add it to your website</h2>
+<div class="card">
+<p style="margin-bottom:6px"><strong>Step 1.</strong> Paste this where you want the box to appear:</p>
+<pre><code id="embed1">&lt;div class="cmm-mot-widget"&gt;&lt;/div&gt;
+&lt;script src="https://checkmymot.github.io/garage-widget/widget.js" async&gt;&lt;/script&gt;</code></pre>
+<button class="copybtn" onclick="copyCode()">Copy code</button>
+<p style="margin-top:14px;font-size:.9rem;color:#46545f"><strong>Step 2.</strong> That's it. No account, no API key, no maintenance.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:#fff;border-top:1px solid #e7ecf2;border-bottom:1px solid #e7ecf2">
+<div class="wrap">
+<h2>Why put it on your site?</h2>
+<ul class="ben">
+<li><strong>Keep visitors on your site longer.</strong> An interactive tool beats a phone number alone — customers check their MOT, then book the test with you.</li>
+<li><strong>Look bigger than you are.</strong> A proper MOT lookup box makes an independent garage feel like a national chain.</li>
+<li><strong>It's genuinely free, forever.</strong> The data comes from official DVSA records; the widget costs you nothing and we maintain it.</li>
+<li><strong>Won't slow your site down.</strong> One tiny script (~4KB), loaded asynchronously, styles sealed off from your theme.</li>
+</ul>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>Questions garages ask</h2>
+<div class="faq">
+<details><summary>Is it really free?</summary><p>Yes. The MOT data is public DVSA data and the checker on our site is free, so the widget is free too — no trial, no catch, no "pro" tier.</p></details>
+<details><summary>Will it break my website's design?</summary><p>No. The widget renders in an isolated container with its own styles — it can't inherit or leak your theme's CSS.</p></details>
+<details><summary>Can I change the colours or text?</summary><p>Not in v1 — it's deliberately zero-config so it works everywhere. If enough garages ask, we'll add theme options.</p></details>
+<details><summary>Do you collect my customers' data?</summary><p>No. The widget sends nothing anywhere until the visitor clicks through to the checker on checkmymot.com — exactly as if they'd visited us directly.</p></details>
+<details><summary>Can I remove it any time?</summary><p>Delete the two lines. Gone instantly, nothing left behind.</p></details>
+</div>
+<p style="margin-top:20px">Run a garage and want this? Questions: <a href="https://checkmymot.com/contact/" style="color:#0B1933;font-weight:700">talk to us</a>.</p>
+</div>
+</section>
+
+<footer>
+<div class="wrap">A free tool by <a href="https://checkmymot.com/">CheckMyMOT</a> — free UK MOT checks, tax calculators and ULEZ tools for drivers.</div>
+</footer>
+
+<script>
+function copyCode(){
+  var t=document.getElementById('embed1').innerText;
+  navigator.clipboard.writeText(t).then(function(){
+    var b=document.querySelector('.copybtn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy code';},1800);
+  });
+}
+</script>
+</body>
+</html>
