@@ -76,9 +76,11 @@
         return;
       }
       err.style.display = 'none';
-      /* v1: open the free checker. (v2 idea: ?reg= prefill once the
-         checker page supports it — no checker changes needed for v1.) */
-      window.open(CHECKER_URL, '_blank', 'noopener');
+      /* Prefill: pass the registration to the checker page, which fills
+   its search box from ?reg= (needs the CheckMyMOT Checker Prefill
+   plugin on checkmymot.com). */
+window.open(CHECKER_URL + '?reg=' + encodeURIComponent(reg), '_blank', 'noopener');
+
     }
     btn.addEventListener('click', go);
     input.addEventListener('keydown', function (e) {
